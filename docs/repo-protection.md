@@ -16,9 +16,11 @@ KMOdan5/clipboard-image-overlay で設定した内容を、ほかのリポジト
 |---|---|---|
 | Wikis | オフ | 文書はリポジトリの `docs/` に置く |
 | Issues | オン | 不具合・要望を受け付ける |
+| Pull requests | オン・Collaborators only | 外部からのコードの PR は受け付けないため(`CONTRIBUTING.md`) |
 | Sponsorships | オン(Sponsors を使うとき) | `.github/FUNDING.yml` と合わせて使う |
 | Discussions | オフ | 窓口を増やさない |
 | Projects | オフ | ロードマップは親 Issue と子 Issue で管理する |
+| Preserve this repository | オン(既定) | GitHub Archive Program で長期保存される |
 
 ### Pull Requests
 | 項目 | 設定 | 理由 |
@@ -90,6 +92,14 @@ KMOdan5/clipboard-image-overlay で設定した内容を、ほかのリポジト
 | Dependabot security updates | オン | 脆弱性を直す PR を自動で作る |
 | Secret Protection(Secret scanning) | オン | パスワードやトークンをコミットしていないか調べる |
 | Push protection | **オン** | トークンなどを含む push をその場で止める |
+| Code scanning(CodeQL analysis) | **オン・Default setup** | コードの脆弱性を自動で調べる。下の設定で使う |
+
+CodeQL の Default setup の設定(clipboard-image-overlay と同じ):
+- Languages: `GitHub Actions` と `C/C++`(プラグインの言語。リポジトリの中身から自動で選ばれる)
+- Query suite: `Default`
+- Scan schedule: Weekly(週 1 回。`main` への push と PR でも動く)
+
+文書だけのリポジトリ(`.github` など)では、調べるコードがないので不要。
 
 ---
 
@@ -151,6 +161,9 @@ gh api $R/rulesets/<id>   # 中身を見る
 
 # 4. 脆弱性の非公開報告
 gh api $R/private-vulnerability-reporting
+
+# 4. CodeQL(Default setup)
+gh api $R/code-scanning/default-setup
 
 # 5. Actions
 gh api $R/actions/permissions
