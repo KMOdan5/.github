@@ -1,0 +1,12 @@
+# Sponsor ボタンに並べる支援の窓口。
+# このリポジトリ(KMOdan5/.github)に置くと、自分の FUNDING.yml を持たない公開リポジトリすべてに使われる。
+
+github: KMOdan5                 # GitHub Sponsors のアカウントの ID(4 つまで並べられる: [KMOdan5, ...])
+# ko_fi:                        # Ko-fi の ID
+# buy_me_a_coffee:              # Buy Me a Coffee の ID
+# patreon:                      # Patreon の ID
+# liberapay:                    # Liberapay の ID
+# polar:                        # Polar の ID
+# open_collective:              # Open Collective の ID
+# thanks_dev:                   # thanks.dev の ID(例: u/gh/KMOdan5)
+# custom: ["https://xxxx.booth.pm/"]   # 専用の項目がないサービス(BOOTH など)は URL で書く(4 つまで)
